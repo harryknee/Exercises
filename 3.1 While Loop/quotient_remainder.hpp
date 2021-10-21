@@ -1,4 +1,3 @@
-// 21/10/2021
 # include <iostream>
 using namespace std;
 
