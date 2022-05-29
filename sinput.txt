@@ -1,0 +1,6 @@
+hello 
+goodbye
+morning
+hello
+afternoon
+morning

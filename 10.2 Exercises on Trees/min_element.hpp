@@ -112,27 +112,6 @@ TreeNode* min_element_tree(TreeNode* t){
   }
 }
 
-int count_nodes_tree(TreeNode* t){
-  if (t == NULL){
-    return 0;
-  }
-  return count_nodes_tree(t->left) + count_nodes_tree(t->right) + 1;
-}
-
-int count_leaves_tree(TreeNode* t){
-  if ((t->left == NULL) && (t->right == NULL)){
-    return 1;
-  }
-  if (t->left == NULL){
-    return count_leaves_tree(t->right);
-  }
-  if (t->right == NULL){
-    return count_leaves_tree(t->left);
-  }
-  // this is when both l/r nodes are not null
-  return count_leaves_tree(t->left) + count_leaves_tree(t->right);
-}
-
 int main(){
     TreeNode* t;
     t = NULL;
@@ -145,9 +124,7 @@ int main(){
     t = ordered_insertion_tree(9, t);
 
     // equivalent to min_element_tree(t)->val
-    std::cout << count_nodes_tree(t) << std::endl;
-
-    std::cout << count_leaves_tree(t);
+    std::cout << (*min_element_tree(t)).val;
 
     deallocate_tree(t);
  
